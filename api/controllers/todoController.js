@@ -15,9 +15,9 @@ export const getAllTodos = async (req, res) => {
 
 export const createNewTodo = async (req, res) => {
   try {
-    const { title, description,userid } = req.body;
+    const { title, description} = req.body;
     // Validate input
-    if (!title || !description || !userid) {
+    if (!title || !description) {
       return res.status(400).json({
         message: "Title and description are required",
       });
@@ -28,7 +28,7 @@ export const createNewTodo = async (req, res) => {
       data: {
         title,
         description,
-        userid
+        
       },
     });
 

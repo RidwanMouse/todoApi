@@ -16,9 +16,8 @@ model Todos {
   tododId Int @id @default(autoincrement())
   title String 
   description String
-  joinedAt DateTime @default(now())
-  userid Int
-  user Users @relation(fields: [userid], references: [userid])
+  isCompleted String
+ 
 }
 
 model Users {
@@ -26,5 +25,5 @@ model Users {
   username String
   email String @unique
   password String
-  todos Todos[]
+
 }
